@@ -13,7 +13,7 @@ class HomeController extends Controller
     public function index()
     {
         $partners = Partner::where('is_active', 1)->get();
-        
+
         return view('frontend.home', [
             'partners' => $partners
         ]);
