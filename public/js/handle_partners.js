@@ -146,10 +146,7 @@ $(document).ready(function () {
         logoError.text("");
 
         const partnerId = $("#partner-form").data("partner-id");
-        console.log(partnerId);
-
         const formData = new FormData();
-
         const name = $("#name").val().trim();
         const isActive = $("#is_active").is(":checked") ? 1 : 0;
 
@@ -170,12 +167,15 @@ $(document).ready(function () {
 
         let url;
         let method = "POST";
-
-        if (!isNaN(partnerId)) {
-            url = create_partner_url;
-        } else {
+        if (partnerId) {
             url = edit_partner_url.replace(":id", partnerId);
+            formData.append("_method", "PUT");
+        } else {
+            url = create_partner_url;
         }
+
+        // CSRF token
+        const csrfToken = $('meta[name="csrf-token"]').attr("content");
 
         $.ajax({
             url: url,
@@ -183,6 +183,10 @@ $(document).ready(function () {
             data: formData,
             processData: false,
             contentType: false,
+            headers: {
+                "X-CSRF-TOKEN": csrfToken,
+                Accept: "application/json",
+            },
             success: function (response) {
                 if (response.success) {
                     Swal.fire({
@@ -196,6 +200,7 @@ $(document).ready(function () {
                 }
             },
             error: function (xhr) {
+                console.log(xhr);
                 if (xhr.status === 422) {
                     const errors = xhr.responseJSON.errors;
                     if (errors.name) {
@@ -235,9 +240,15 @@ $(document).ready(function () {
             cancelButtonColor: "#3085d6",
         }).then((result) => {
             if (result.isConfirmed) {
+                const csrfToken = $('meta[name="csrf-token"]').attr("content");
+
                 $.ajax({
-                    url: `/admin/partners/${partnerId}`,
+                    url: delete_partner_url.replace(":id", partnerId),
                     method: "DELETE",
+                    headers: {
+                        "X-CSRF-TOKEN": csrfToken,
+                        Accept: "application/json",
+                    },
                     success: function (response) {
                         if (response.success) {
                             Swal.fire({
@@ -274,6 +285,7 @@ $(document).ready(function () {
             .find(".status-badge span")
             .hasClass("bg-green-100");
         const statusText = isActive ? "vô hiệu hóa" : "kích hoạt";
+        const csrfToken = $('meta[name="csrf-token"]').attr("content");
 
         Swal.fire({
             title: "Xác nhận",
@@ -285,12 +297,10 @@ $(document).ready(function () {
         }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
-                    url: `/admin/partners/${partnerId}/toggle-status`,
+                    url: toggle_status_partner_url.replace(":id", partnerId),
                     method: "PATCH",
                     headers: {
-                        "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
-                            "content"
-                        ),
+                        "X-CSRF-TOKEN": csrfToken,
                         Accept: "application/json",
                     },
                     success: function (response) {
@@ -324,7 +334,9 @@ $(document).ready(function () {
                             });
                         }
                     },
-                    error: function () {
+                    error: function (error) {
+                        console.log(error);
+
                         Swal.fire({
                             icon: "error",
                             title: "Lỗi",

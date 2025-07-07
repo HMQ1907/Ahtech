@@ -95,4 +95,11 @@
 
 @push('head')
     <script src="{{ asset('js/handle_partners.js') }}"></script>
+    <script>
+        let search_partner_url = "{{ route('partner.index') }}";
+        let create_partner_url = "{{ route('partner.store') }}";
+        let edit_partner_url = "{{ route('partner.update', ['id' => ':id']) }}";
+        let delete_partner_url = "{{ route('partner.delete', ['id' => ':id']) }}";
+        let toggle_status_partner_url = "{{ route('partner.toggle-status', ['id' => ':id']) }}";
+    </script>
 @endpush

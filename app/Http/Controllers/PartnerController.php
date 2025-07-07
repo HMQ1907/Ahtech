@@ -91,12 +91,8 @@ class PartnerController extends Controller
                 if ($partner->logo && file_exists(public_path($partner->logo))) {
                     unlink(public_path($partner->logo));
                 }
-            
-                $file = $request->file('logo');
-                $filename = uniqid() . '.' . $file->getClientOriginalExtension();
-                $file->move(public_path('partner_logos'), $filename);
-            
-                $partner->logo = 'partner_logos/' . $filename;
+                $logoPath = $request->file('logo')->store('partner_logos', 'public');
+                $partner->logo = 'storage/' . $logoPath;
             }
             
 
@@ -156,7 +152,6 @@ class PartnerController extends Controller
                 if ($partner->logo && file_exists(public_path($partner->logo))) {
                     unlink(public_path($partner->logo));
                 }
-
                 $logoPath = $request->file('logo')->store('partner_logos', 'public');
                 $partner->logo = 'storage/' . $logoPath;
             }
@@ -178,7 +173,7 @@ class PartnerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($id)
     {
         try {
             $partner = Partner::findOrFail($id);

@@ -65,8 +65,9 @@ Route::middleware('auth')->group(function () {
             Route::get('add', [PartnerController::class, 'create'])->name('partner.create');
             Route::post('create', [PartnerController::class, 'store'])->name('partner.store');
             Route::get('/edit/{id}', [PartnerController::class, 'edit'])->name('partner.edit');
-            Route::post('update/{id}', [PartnerController::class, 'update'])->name('partner.update');
+            Route::put('update/{id}', [PartnerController::class, 'update'])->name('partner.update');
             Route::delete('/{id}', [PartnerController::class, 'delete'])->name('partner.delete');
+            Route::patch('/{id}/toggle-status', [PartnerController::class, 'toggleStatus'])->name('partner.toggle-status');
         });
     });
 });
