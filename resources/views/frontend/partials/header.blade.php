@@ -42,16 +42,16 @@
             x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0"
             x-transition:leave-end="opacity-0 -translate-y-4" class="md:hidden py-4">
             <div class="flex flex-col space-y-4">
-                <a
+                <a href="{{ route('fe.home') }}"
                     class="text-gray-700 cursor-pointer dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium">Home</a>
-                <a
+                <a href="{{ route('fe.about') }}"
                     class="text-gray-700 cursor-pointer dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium">About</a>
-                <a
+                <a href="{{ route('fe.service') }}"
                     class="text-gray-700 cursor-pointer dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium">Services</a>
-                <a
+                <a href="{{ route('fe.contact') }}"
                     class="text-gray-700 cursor-pointer dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium">Contact</a>
             </div>
         </div>
     </div>
 </header>
-<div class="h-20"></div> <!-- Spacer for fixed header -->
+<div class="h-20"></div>
