@@ -38,7 +38,7 @@
             <div class="space-y-4">
                 <h3 class="text-lg font-semibold uppercase tracking-wider">Address</h3>
                 <p class="text-gray-400">
-                    5th Floor, TTM Building, 309 Bach Dang, 15 Ward, Binh Thanh District, Ho Chi Minh City, Viet Nam
+                    5th Floor, TTM Building, 309 Bach Dang, Gia Dinh Ward, Ho Chi Minh City, Viet Nam
                 </p>
             </div>
             

@@ -94,7 +94,7 @@
                         </div>
                         <div>
                             <h3 class="text-lg font-semibold text-gray-900 mb-1">Address</h3>
-                            <p class="text-gray-700">5th Floor, TTM Building, 309 Bach Dang, 15 Ward, Binh Thanh District, Ho Chi Minh City, Viet Nam</p>
+                            <p class="text-gray-700">5th Floor, TTM Building, 309 Bach Dang, Gia Dinh Ward, Ho Chi Minh City, Viet Nam</p>
                         </div>
                     </div>
                 </div>
