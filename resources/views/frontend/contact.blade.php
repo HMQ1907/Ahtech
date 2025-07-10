@@ -100,7 +100,7 @@
                 </div>
                 
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="aspect-w-16 aspect-h-9">
+                    <div class="aspect-w-16 aspect-h-9 h-[270px]">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1258173646644!2d106.7004358!3d10.8031128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528a5d5d3b0d3%3A0x2fb4502ebd2c8625!2zMzA5IELhuqFjaCDEkOG6sW5nLCBQaMaw4budbmcgMTUsIELDrG5oIFRo4bqhbmgsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1677123456789!5m2!1svi!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
@@ -183,7 +183,7 @@
                             </svg>
                             <h4 class="text-lg font-semibold text-gray-900">Established</h4>
                         </div>
-                        <p class="text-gray-700 ml-9 mb-6">2015</p>
+                        <p class="text-gray-700 ml-9 mb-6">2014</p>
                         
                         <div class="flex items-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -191,7 +191,7 @@
                             </svg>
                             <h4 class="text-lg font-semibold text-gray-900">Employees</h4>
                         </div>
-                        <p class="text-gray-700 ml-9 mb-6">50-100</p>
+                        <p class="text-gray-700 ml-9 mb-6">10-20</p>
                     </div>
                 </div>
             </div>
