@@ -183,7 +183,7 @@
                             </svg>
                             <h4 class="text-lg font-semibold text-gray-900">Established</h4>
                         </div>
-                        <p class="text-gray-700 ml-9 mb-6">2014</p>
+                        <p class="text-gray-700 ml-9 mb-6">2024</p>
                         
                         <div class="flex items-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
