@@ -21,6 +21,7 @@
 
     <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="icon" type="image/png" href="{{ asset('images/logo2.png') }}">
 </head>
 
 <body class="font-sans antialiased bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200">
